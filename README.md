@@ -8,7 +8,7 @@ File has 2 parts:
 
 1. Defining command aliases for various commands that need sudo
 
-2. Adding permissions for the comamnd aliases.
+2. Adding permissions for the command aliases.
 
 Not all the defined command aliases have been added to the 2nd part. For example, DEVICE42_CONTAINERS is not added. If you need to run containers discovery, you need to add that alias to the permissions list as well.
 
