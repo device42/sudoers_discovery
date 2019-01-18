@@ -6,50 +6,11 @@ Cmnd_Alias DEVICE42_IPTABLES = /sbin/iptables -t nat -L -n -v
 Cmnd_Alias DEVICE42_PARTS = /usr/bin/lspci -nn -vm, /usr/bin/systool -c fc_host -v
 # sudo, next non-sudo
 Cmnd_Alias DEVICE42_PORTS = /bin/netstat -anp, /bin/ss -tuapn
-
 # OS specific services and packages. 
 # non sudo, then sudo
 Cmnd_Alias DEVICE42_PACKAGES = /sbin/chkconfig -t
 Cmnd_Alias DEVICE42_SERVICES = /usr/bin/find /etc/init.d -perm *, /usr/bin/find /etc/rc.d -perm *
-# Run as sudo 
-Cmnd_Alias DEVICE42_DMIDECODE = /usr/sbin/dmidecode -s *, /usr/sbin/dmidecode -t *, /bin/grep '' /sys/devices/virtual/dmi/id/*
-Cmnd_Alias DEVICE42_CRONTAB = /usr/bin/crontab -u * -l, /bin/ls /var/spool/cron/crontabs, /bin/ls /var/spool/cron
-Cmnd_Alias DEVICE42_DISK = /sbin/fdisk -l, /sbin/hdparm -l *
-Cmnd_Alias DEVICE42_IPTABLES = /sbin/iptables -t nat -L -n -v
-Cmnd_Alias DEVICE42_PARTS = /usr/bin/lspci -nn -vm, /usr/bin/systool -c fc_host -v
-# sudo, next non-sudo
-Cmnd_Alias DEVICE42_PORTS = /bin/netstat -anp, /bin/ss -tuapn
-
-# OS specific services and packages. 
-# non sudo, then sudo
-Cmnd_Alias DEVICE42_PACKAGES = /sbin/chkconfig -t
-Cmnd_Alias DEVICE42_SERVICES = /usr/bin/find /etc/init.d -perm *, /usr/bin/find /etc/rc.d -perm *
-# Run as sudo 
-Cmnd_Alias DEVICE42_DMIDECODE = /usr/sbin/dmidecode -s *, /usr/sbin/dmidecode -t *, /bin/grep '' /sys/devices/virtual/dmi/id/*
-Cmnd_Alias DEVICE42_CRONTAB = /usr/bin/crontab -u * -l, /bin/ls /var/spool/cron/crontabs, /bin/ls /var/spool/cron
-Cmnd_Alias DEVICE42_DISK = /sbin/fdisk -l, /sbin/hdparm -l *
-Cmnd_Alias DEVICE42_IPTABLES = /sbin/iptables -t nat -L -n -v
-Cmnd_Alias DEVICE42_PARTS = /usr/bin/lspci -nn -vm, /usr/bin/systool -c fc_host -v
-# sudo, next non-sudo
-Cmnd_Alias DEVICE42_PORTS = /bin/netstat -anp, /bin/ss -tuapn
-
-# OS specific services and packages. 
-# non sudo, then sudo
-Cmnd_Alias DEVICE42_PACKAGES = /sbin/chkconfig -t
-Cmnd_Alias DEVICE42_SERVICES = /usr/bin/find /etc/init.d -perm *, /usr/bin/find /etc/rc.d -perm *
-
-# virtual machines and containers
-# Always sudo
-Cmnd_Alias DEVICE42_CONTAINERS = /usr/bin/docker info, /usr/bin/docker ps *, /usr/bin/docker inspect *, /usr/bin/docker top *, /usr/bin/docker -t *, /usr/bin/lxc-attach -n *, /usr/bin/lxc-ls, /usr/bin/virsh list --all, /usr/bin/virsh dumpxml *,/usr/bin/vzctl exec *, /usr/bin/vzlist -a *,
-
-%device42 ALL=(ALL) NOPASSWD: DEVICE42_DMIDECODE, DEVICE42_CRONTAB, DEVICE42_DISK, DEVICE42_IPTABLES, DEVICE42_PARTS, DEVICE42_PORTS
-# virtual machines and containers
-# Always sudo
-Cmnd_Alias DEVICE42_CONTAINERS = /usr/bin/docker info, /usr/bin/docker ps *, /usr/bin/docker inspect *, /usr/bin/docker top *, /usr/bin/docker -t *, /usr/bin/lxc-attach -n *, /usr/bin/lxc-ls, /usr/bin/virsh list --all, /usr/bin/virsh dumpxml *,/usr/bin/vzctl exec *, /usr/bin/vzlist -a *,
-
-%device42 ALL=(ALL) NOPASSWD: DEVICE42_DMIDECODE, DEVICE42_CRONTAB, DEVICE42_DISK, DEVICE42_IPTABLES, DEVICE42_PARTS, DEVICE42_PORTS
 # virtual machines and containers
 # Always sudo
 Cmnd_Alias DEVICE42_CONTAINERS = /usr/bin/docker info, /usr/bin/docker ps *, /usr/bin/docker inspect *, /usr/bin/docker top *, /usr/bin/docker -t *, /usr/bin/lxc-attach -n *, /usr/bin/lxc-ls, /usr/bin/virsh list --all, /usr/bin/virsh dumpxml *,/usr/bin/vzctl exec *, /usr/bin/vzlist -a *
-
 %device42 ALL=(ALL) NOPASSWD: DEVICE42_DMIDECODE, DEVICE42_CRONTAB, DEVICE42_DISK, DEVICE42_IPTABLES, DEVICE42_PARTS, DEVICE42_PORTS
