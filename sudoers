@@ -14,3 +14,12 @@ Cmnd_Alias DEVICE42_SERVICES = /usr/bin/find /etc/init.d -perm *, /usr/bin/find 
 # Always sudo
 Cmnd_Alias DEVICE42_CONTAINERS = /usr/bin/docker info, /usr/bin/docker ps *, /usr/bin/docker inspect *, /usr/bin/docker top *, /usr/bin/docker -t *, /usr/bin/lxc-attach -n *, /usr/bin/lxc-ls, /usr/bin/virsh list --all, /usr/bin/virsh dumpxml *,/usr/bin/vzctl exec *, /usr/bin/vzlist -a *
 %device42 ALL=(ALL) NOPASSWD: DEVICE42_DMIDECODE, DEVICE42_CRONTAB, DEVICE42_DISK, DEVICE42_IPTABLES, DEVICE42_PARTS, DEVICE42_PORTS
+
+
+# This is Wesley Coleman (African Bank Customer), There are 3 Cmd_Alias entries that are not referenced in your permitted commands on the last line.
+
+# Cmnd_Alias DEVICE42_PACKAGES
+# Cmnd_Alias DEVICE42_SERVICES
+# Cmnd_Alias DEVICE42_CONTAINERS
+
+# These should be added to the last line to make them usable.
